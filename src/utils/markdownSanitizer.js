@@ -7,7 +7,7 @@ function sanitizeMarkdown(markdownContent) {
   const convertedHtml = marked.parse(markdownContent);
   // 2. sanitize the html
   const sanitizedHtml = sanitizeHtmlLibrary(convertedHtml, {
-    allowedTags: sanitizeHtmlLibrary.defaults.allowedTags,
+    allowedTags: sanitizeHtmlLibrary.defaults.allowedTags.concat(["img"]),
   });
 
   // 3. convert html to markdown
